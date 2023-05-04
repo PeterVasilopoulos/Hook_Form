@@ -1,10 +1,10 @@
 import './App.css';
-import PersonCard from "./components/PersonCard";
+import Form from "./components/Form";
 
 function App() {
   return (
       <div>
-        
+        <Form/>
       </div>
   );
 }
