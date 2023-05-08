@@ -3,8 +3,9 @@ import React, {useState} from 'react'
 const Form = () => {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
-    const [age, setAge] = useState("");
-    const [hairColor, setHairColor] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
 
     return (
         <div>
@@ -20,13 +21,18 @@ const Form = () => {
                 </div>
 
                 <div>
-                    <label>Age:</label>
-                    <input type="text" onChange={(e) => setAge(e.target.value)}/>
+                    <label>Email:</label>
+                    <input type="text" onChange={(e) => setEmail(e.target.value)}/>
                 </div>
 
                 <div>
-                    <label>Hair Color:</label>
-                    <input type="text" onChange={(e) => setHairColor(e.target.value)}/>
+                    <label>Password:</label>
+                    <input type="password" onChange={(e) => setPassword(e.target.value)}/>
+                </div>
+
+                <div>
+                    <label>Confirm Password:</label>
+                    <input type="password" onChange={(e) => setConfirmPassword(e.target.value)}/>
                 </div>
             </form>
         
@@ -37,10 +43,12 @@ const Form = () => {
                 <p>{firstName}</p>
                 <label>Last Name:</label>
                 <p>{lastName}</p>
-                <label>Age:</label>
-                <p>{age}</p>
-                <label>Hair Color:</label>
-                <p>{hairColor}</p>
+                <label>Email:</label>
+                <p>{email}</p>
+                <label>Password:</label>
+                <p>{password}</p>
+                <label>Confirm Password:</label>
+                <p>{confirmPassword}</p>
             </div>
 
         </div>
