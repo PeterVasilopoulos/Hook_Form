@@ -6,17 +6,9 @@ const Form = () => {
     const [age, setAge] = useState("");
     const [hairColor, setHairColor] = useState("");
 
-    let [formData, setFormData] = useState([]);
-    
-    const submitHandler = (e) => {
-        e.preventDefault();
-        console.log("Form Submitted", firstName, lastName, age, hairColor);
-        setFormData([{firstName, lastName, age, hairColor}])
-    }
-
     return (
         <div>
-            <form onSubmit={submitHandler}>
+            <form>
                 <div>
                     <label>First Name:</label>
                     <input type="text" onChange={(e) => setFirstName(e.target.value)}/>
@@ -36,29 +28,21 @@ const Form = () => {
                     <label>Hair Color:</label>
                     <input type="text" onChange={(e) => setHairColor(e.target.value)}/>
                 </div>
-                
-                <button>Submit</button>
             </form>
-
+        
+            {/* Displaying Form Data */}
             <div>
-                {
-                    formData.map((data) => {
-                        return (
-                            <div>
-                                <p>Your Form Data</p>
-                                <label>First Name:</label>
-                                <p>{data.firstName}</p>
-                                <label>Last Name:</label>
-                                <p>{data.lastName}</p>
-                                <label>Age:</label>
-                                <p>{data.age}</p>
-                                <label>Hair Color:</label>
-                                <p>{data.hairColor}</p>
-                            </div>
-                        )
-                    })
-                }
+                <p>Your Form Data</p>
+                <label>First Name:</label>
+                <p>{firstName}</p>
+                <label>Last Name:</label>
+                <p>{lastName}</p>
+                <label>Age:</label>
+                <p>{age}</p>
+                <label>Hair Color:</label>
+                <p>{hairColor}</p>
             </div>
+
         </div>
     )
 }
